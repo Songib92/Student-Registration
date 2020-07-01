@@ -10,7 +10,23 @@
 </head>
 <body>
 	
-	
+	<?php 
+
+		/**
+	 	* Student Reg Form
+	 	*/
+	 	if ( isset($_POST['submit']) ) {
+	 	
+	 		// Get Value From This Form
+	 		$name 		= $_POST['sname'];
+	 		$email 		= $_POST['email'];
+	 		$pnumber 	= $_POST['sname'];
+	 		$age 		= $_POST['age'];
+	 	}
+
+
+
+	 ?>
 
 	<div class="wrap shadow">
 		<div class="card">
