@@ -20,10 +20,20 @@
 	 		// Get Value From This Form
 	 		$name 		= $_POST['sname'];
 	 		$email 		= $_POST['email'];
-	 		$pnumber 	= $_POST['sname'];
+	 		$pnumber 	= $_POST['pnumber'];
 	 		$age 		= $_POST['age'];
 	 	}
 
+	 	/**
+	 	 * Empty Field Checking
+	 	 */
+	 	if (empty($name) || empty($email) || empty($pnumber) || empty($age)) {
+	 		$massage = "<p class='alert alert-danger'> আপনার সঠিক তথ্য দিয়ে ঘরগুলো পূরণ করুন !! <button class='close' data-dismiss='alert'>&times;</button></p>";
+	 	}else{
+	 		$massage = "<p class='alert alert-success'> ধন্যবাদ আপনা তথ্য পূরণ সম্পন্ন হয়েছে !! <button class='close' data-dismiss='alert'>&times;</button></p>";
+	 	}
+
+	 
 
 
 	 ?>
@@ -32,6 +42,11 @@
 		<div class="card">
 			<div class="card-body">
 				<h2>Sign Up</h2>
+				<?php 
+					if (isset($massage)) {
+						echo $massage;
+					}
+				 ?>
 				<form action="" method="POST">
 					<div class="form-group">
 						<label for="">Student Name</label>
