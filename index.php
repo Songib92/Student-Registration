@@ -16,25 +16,25 @@
 		<div class="card">
 			<div class="card-body">
 				<h2>Sign Up</h2>
-				<form action="">
+				<form action="" method="POST">
 					<div class="form-group">
 						<label for="">Student Name</label>
-						<input class="form-control" type="text">
+						<input name="sname" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
-						<input class="form-control" type="text">
+						<input name="email" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Phone Number</label>
-						<input class="form-control" type="text">
+						<input name="pnumber" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Age</label>
-						<input class="form-control" type="text">
+						<input name="age" class="form-control" type="text">
 					</div>
 					<div class="form-group">
-						<input class="btn btn-primary" type="submit" value="Add New Student">
+						<input name="submit" class="btn btn-primary" type="submit" value="Add New Student">
 					</div>
 				</form>
 			</div>
