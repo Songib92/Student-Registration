@@ -22,7 +22,21 @@
 	 		$email 		= $_POST['email'];
 	 		$pnumber 	= $_POST['pnumber'];
 	 		$age 		= $_POST['age'];
-	 	}
+
+
+	 		/**
+	 		 * Email Validation Check
+	 		 */
+	 		$email_val = explode('@', $email);
+
+	 		$email_part = end($email_val);
+
+	 		if ( $email_part == 'titumir.com' ) {
+	 			$email_validate	= true;
+	 		}else{
+	 			$email_validate = false;
+	 		}
+
 
 	 		/**
 	 	 	* Age Calculate
@@ -32,6 +46,9 @@
 	 		}else{
 	 			$age_cal = false;
 	 		}
+	 	}
+
+	 		
 
 
 
@@ -46,7 +63,9 @@
 	 		$massage = "<p class='alert alert-warning'> আপনার বয়স সঠিক নয় এই রেজিষ্ট্রশনের জন্য !! <button class='close' data-dismiss='alert'>&times;</button></p>";
 	 	}elseif(filter_var($email, FILTER_VALIDATE_EMAIL) == false){
 	 		$massage = "<p class='alert alert-danger'> আপনার ইমেইলটি সঠিক নয়। দয়া করে সঠিক ইমেইল এড্রেস দিন। <button class='close' data-dismiss='alert'>&times;</button></p>";
-	 	} else{
+	 	}elseif($email_validate == false){
+	 		$massage = "<p class='alert alert-danger'> আপনার ইমেইলটি আমাদের প্রতিষ্ঠানের নয়। দয়া করে সঠিক ইমেইল এড্রেস দিন। <button class='close' data-dismiss='alert'>&times;</button></p>";
+	 	}else{
 	 		$massage = "<p class='alert alert-success'> ধন্যবাদ আপনার তথ্য পূরণ সম্পন্ন হয়েছে !! <button class='close' data-dismiss='alert'>&times;</button></p>";
 	 	}
 
