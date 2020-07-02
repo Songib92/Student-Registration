@@ -39,29 +39,16 @@
 	 			$email_validate = false;
 	 		}
 
-
-	 		/**
-	 	 	* Age Calculate
-	 	 	*/
-	 		if ( $age >=18 && $age <=28 ) {
-	 			$age_cal = true;
-	 		}else{
-	 			$age_cal = false;
-	 		}
 	 	}
 
-	 		
-
-
-
-
+	 
 
 	 	/**
 	 	 * Empty Field Checking
 	 	 */
 	 	if (empty($name) || empty($email) || empty($pnumber) || empty($age)) {
 	 		$massage = "<p class='alert alert-danger'> আপনার সঠিক তথ্য দিয়ে ঘরগুলো পূরণ করুন !! <button class='close' data-dismiss='alert'>&times;</button></p>";
-	 	}elseif($age_cal == false){
+	 	}elseif(ageValidation($age, 18, 30) == false){
 	 		$massage = "<p class='alert alert-warning'> আপনার বয়স সঠিক নয় এই রেজিষ্ট্রশনের জন্য !! <button class='close' data-dismiss='alert'>&times;</button></p>";
 	 	}elseif(filter_var($email, FILTER_VALIDATE_EMAIL) == false){
 	 		$massage = "<p class='alert alert-danger'> আপনার ইমেইলটি সঠিক নয়। দয়া করে সঠিক ইমেইল এড্রেস দিন। <button class='close' data-dismiss='alert'>&times;</button></p>";

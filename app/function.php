@@ -11,3 +11,19 @@
 	}
 
 
+	/**
+	 * Age Validation
+	 */
+	function ageValidation($age, $min, $max){
+		/**
+	 	 * Age Calculate
+	 	 */
+	 		if ( $age >=$min && $age <=$max ) {
+	 			return true;
+	 		}else{
+	 			return false;
+	 		}
+	}
+
+
+
