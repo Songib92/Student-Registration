@@ -1,3 +1,5 @@
+<?php include_once "app/function.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +68,10 @@
 	 	}elseif($email_validate == false){
 	 		$massage = "<p class='alert alert-danger'> আপনার ইমেইলটি আমাদের প্রতিষ্ঠানের নয়। দয়া করে সঠিক ইমেইল এড্রেস দিন। <button class='close' data-dismiss='alert'>&times;</button></p>";
 	 	}else{
-	 		$massage = "<p class='alert alert-success'> ধন্যবাদ আপনার তথ্য পূরণ সম্পন্ন হয়েছে !! <button class='close' data-dismiss='alert'>&times;</button></p>";
+	 		
+
+	 		header('location:index.php');
+
 	 	}
 
 	 
@@ -89,19 +94,19 @@
 				<form action="" method="POST">
 					<div class="form-group">
 						<label for="">Student Name</label>
-						<input name="sname" class="form-control" type="text">
+						<input name="sname" class="form-control" value="<?php old('sname'); ?>" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
-						<input name="email" class="form-control" type="text">
+						<input name="email" class="form-control" value="<?php old('email'); ?>" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Phone Number</label>
-						<input name="pnumber" class="form-control" type="text">
+						<input name="pnumber" class="form-control" value="<?php old('pnumber'); ?>" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Age</label>
-						<input name="age" class="form-control" type="text">
+						<input name="age" class="form-control" value="<?php old('age'); ?>" type="text">
 					</div>
 					<div class="form-group">
 						<input name="submit" class="btn btn-primary" type="submit" value="Add New Student">
