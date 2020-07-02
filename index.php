@@ -33,13 +33,19 @@
 	 			$age_cal = false;
 	 		}
 
+
+
+
+
 	 	/**
 	 	 * Empty Field Checking
 	 	 */
 	 	if (empty($name) || empty($email) || empty($pnumber) || empty($age)) {
 	 		$massage = "<p class='alert alert-danger'> আপনার সঠিক তথ্য দিয়ে ঘরগুলো পূরণ করুন !! <button class='close' data-dismiss='alert'>&times;</button></p>";
 	 	}elseif($age_cal == false){
-	 		$massage = "<p class='alert alert-warning'> আপনার বয়স সঠিক নয় !! <button class='close' data-dismiss='alert'>&times;</button></p>";
+	 		$massage = "<p class='alert alert-warning'> আপনার বয়স সঠিক নয় এই রেজিষ্ট্রশনের জন্য !! <button class='close' data-dismiss='alert'>&times;</button></p>";
+	 	}elseif(filter_var($email, FILTER_VALIDATE_EMAIL) == false){
+	 		$massage = "<p class='alert alert-danger'> আপনার ইমেইলটি সঠিক নয়। দয়া করে সঠিক ইমেইল এড্রেস দিন। <button class='close' data-dismiss='alert'>&times;</button></p>";
 	 	} else{
 	 		$massage = "<p class='alert alert-success'> ধন্যবাদ আপনার তথ্য পূরণ সম্পন্ন হয়েছে !! <button class='close' data-dismiss='alert'>&times;</button></p>";
 	 	}
