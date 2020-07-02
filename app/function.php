@@ -26,4 +26,21 @@
 	}
 
 
+	/**
+	 * Email Formate
+	 */
+	function emailFormat($email, $email_format){
+		/**
+	 		 * Email Validation Check
+	 		 */
+	 		$email_val = explode('@', $email);
+
+	 		$email_part = end($email_val);
+
+	 		if ( $email_part == $email_format ) {
+	 			return true;
+	 		}else{
+	 			return false;
+	 		}
+	}
 
