@@ -25,6 +25,12 @@
 		$file_size	= $_FILES['photo']['size'] / (1024 * 1024);
 
 
+		// File Extension
+
+		$file_array = explode('.', $file_name);
+		$file_extension = end($file_array);
+
+
 		/**
 		 * File Validate
 		 */
@@ -32,6 +38,8 @@
 			 $massage = "<p class='alert alert-danger'> দয়া করে একটি ছবি বাছাই করুন !! <button class='close' data-dismiss='alert'>&times;</button></p>";
 		}elseif ($file_size >1 ) {
 			$massage = "<p class='alert alert-warning'> আপনার ছবির সাইজ 1 MB-এর ছোট হতে হবে !!  <button class='close' data-dismiss='alert'>&times;</button></p>";
+		}elseif (in_array($file_extension, ['jpg','png','gif','jpeg']) == false) {
+			$massage = "<p class='alert alert-danger'> আপনার ছবির ফরমেট সঠিক নয় !!  <button class='close' data-dismiss='alert'>&times;</button></p>";
 		}
 		
 	}
